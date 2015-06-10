@@ -3,14 +3,19 @@
 <title>ODI Organogram</title>
 <style>
 
-.node circle {
+.node circle, circle.node {
   fill: #fff;
   stroke: #2254F4;
   stroke-width: 1.5px;
 }
 
-.node.hiring circle {
+.node.hiring circle, circle.node.hiring {
   stroke: #FF6700;
+}
+
+circle.programme {
+  stroke: black;
+  fill: black;
 }
 
 .node {
@@ -28,96 +33,121 @@
 }
 
 </style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <body>
+  <div class="container">
+    <h1 class="page-header">ODI Organograms</h1>
+    <p>The following diagrams summarise the data found in the <a href="https://docs.google.com/spreadsheets/d/1X1jMwSQLuqPjbpw23Bu-pxmVz96XyfjUYPpAF8jnu94/edit#gid=1646029476">2015 ODI Organogram spreadsheet</a>. Note that this is <strong>not</strong> currently automatically updated based on the data.</p>
+    <h2>Line Management</h2>
+    <p>The following visualisation shows our line management hierarchy, including new roles but not new line management that may result from those roles being filled. Hover over a name to see the role title for that person.</p>
+    <svg id="line-management"></svg>
+    <h2>Programmes</h2>
+    <p>The following visualisation shows people's relationships to different programmes (the black dots). Hover over a dot to see the name of the programme, person or unfilled role. Drag to adjust the layout.</p>
+    <svg id="programmes"></svg>
+    <h2>Functions</h2>
+    <p>The following visualisation shows people's relationships to different functions (the black dots). Hover over a dot to see the name of the function, person or unfilled role. Drag to adjust the layout.</p>
+    <svg id="functions"></svg>
+  </div>
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script type="text/csv" id="people">Member Id,First Name,Last Name,Reference Name,Role Title,Role Type,# Reports,Reports To ID,Reports To,Membership (11),Training (12),Franchise (5),Services (24),Evidence (22),R&D (22),Strategy (7),Environment (13),Culture (15),leadership (12),finance (3),sales (10),marketing (1),engagement (5),account mgmt (5),project mgmt (11),consultancy (6),research (15),training (3),product mgmt (9),tech dev (8),communications (3),production (6),events (3),team support (9),people dev (3)
-1,NK,NK,Account Manager,Account Manager,Permanent,0,63,Richard Stirling,,,,X,,,,,,,,,,,X,,,,,,,,,,,
-2,Adrian,Philpott,Adrian Philpott,Brand Design,Associate,0,39,Kathryn Corrick,,,,,,X,,,X,,,,,,,,,,,,,,X,,,
-3,Alison,Walters,Alison Walters,Finance,Permanent,0,44,Louise Burke,,,,,,,,X,,,X,,,,,,,,,,,,,,,
+<script type="text/csv" id="people">Member Id,First Name,Last Name,Reference Name,Role Title,Role Type,# Reports,Reports To ID,Reports To,Membership (12),Training (13),Franchise (6),Services (25),Evidence (23),R&D (24),Strategy (7),Environment (13),Culture (15),leadership (12),finance (3),sales (10),marketing (1),engagement (5),account mgmt (5),project mgmt (11),consultancy (6),research (15),training (3),product mgmt (9),tech dev (8),communications (3),production (6),events (3),team support (9),people dev (3)
+1,NK,NK,Account Manager,Account Manager,Permanent,0,64,Richard Stirling,,,,X,,,,,,,,,,,X,,,,,,,,,,,
+2,Adrian,Philpott,Adrian Philpott,Brand Design,Associate,0,40,Kathryn Corrick,,,,,,X,,,X,,,,,,,,,,,,,,X,,,
+3,Alison,Walters,Alison Walters,Finance,Permanent,0,45,Louise Burke,,,,X,X,X,,X,,,X,,,,,,,,,,,,,,,
 4,Amanda,Smith,Amanda Smith,Community Engagement Manager,Permanent,0,79,Tom Health,,,,,X,X,,,,,,,,X,,,,,,,,,,,,
-5,Andrea,Cox,Andrea Cox,Membership Manager,Permanent,0,24,Georgia Phillips,X,,,,,,,,,,,,,X,X,,,,,,,,,,,
-6,Anna,Scott,Anna Scott,Writer / Editor,Permanent,0,39,Kathryn Corrick,,,,X,X,,,,X,,,,,,,,,,,,,,X,,,
-7,Anneza,Pitsialis,Anneza Pitsialis,Programme Administrator,Permanent,0,63,Richard Stirling,,,X,,,,,,,,,,,,X,,,,,,,,,,,
+5,Andrea,Cox,Andrea Cox,Membership Manager,Permanent,0,25,Georgia Phillips,X,,,,,,,,,,,,,X,X,,,,,,,,,,,
+6,Anna,Scott,Anna Scott,Writer / Editor,Permanent,0,40,Kathryn Corrick,,,,X,X,,,,X,,,,,,,,,,,,,,X,,,
+7,Anneza,Pitsialis,Anneza Pitsialis,Programme Administrator,Permanent,0,64,Richard Stirling,,,X,,,,,,,,,,,,X,,,,,,,,,,,
 8,Benjamin,Cave,Benjamin Cave,Trainer,Permanent,0,71,Simon Bullmore,,X,,,,,,,,,,,,,,,,,X,,,,,,,
-9,Briony,Phillips,Briony Phillips,ODCS Programme Lead,Fixed-term,0,34,Jeni Tennison,,,,X,,,,,,,,,,X,,,,,,X,,,,,,
-10,Carl,Rodrigues,Carl Rodrigues,Commercial Sales,Associate,0,23,Gavin Starks,X,,,,,,,,,,,X,,,,,,,,,,,,,,
-11,Carlina,George,Carlina George,People,Permanent,0,48,Michelle Prescott,,,,,,,,X,,,,,,,,,,,,,,,,,,X
-12,Clara,Lewis,Clara Lewis,Programme Support,Permanent,0,31,Jade Croucher,X,,,,,,,,,,,,,,,,,,,,,,,,X,
+9,Briony,Phillips,Briony Phillips,ODCS Programme Lead,Fixed-term,0,35,Jeni Tennison,,,,X,,,,,,,,,,X,,,,,,X,,,,,,
+10,Carl,Rodrigues,Carl Rodrigues,Commercial Sales,Associate,0,24,Gavin Starks,X,,,,,,,,,,,X,,,,,,,,,,,,,,
+11,Carlina,George,Carlina George,People,Permanent,0,49,Michelle Prescott,,,,,,,,X,,,,,,,,,,,,,,,,,,X
+12,Clara,Lewis,Clara Lewis,Programme Support,Permanent,0,32,Jade Croucher,X,,,,,,,,,,,,,,,,,,,,,,,,X,
 13,Dave,Tarrant,Dave Tarrant,Senior Trainer,Permanent,0,71,Simon Bullmore,,X,,,,,,,,,,,,,,,,,X,,,,,,,
-14,Dawn,Duhaney,Dawn Duhaney,Junior Analyst,Permanent,0,20,Emma Truswell,,,,X,,,,,,,,,,,,,,X,,,,,,,,
-15,NK,NK,Developer,Developer,Permanent,0,32,James Smith,,,,,,X,,,,,,,,,,,,,,,X,,,,,
-16,NK,NK,Digital Marketing Manager,Digital Marketing Manager,Permanent,0,47,Membership Business Manager,X,X,,X,X,X,,,X,,,,X,,,,,,,,,,,,,
-17,NK,NK,Digital Producer,Digital Producer,Permanent,0,26,Head of Content,,,,,,,,,X,,,,,,,,,,,,,,X,,,
-18,Ellen,Broad,Ellen Broad,Policy Advisor,Permanent,0,34,Jeni Tennison,,,,X,X,,X,,,,,,,,,,X,,,,,,,,,
-19,Emma,Thwaites,Emma Thwaites,Communications,Associate,2,23,Gavin Starks,,,,,X,,X,,X,,,,,,,,,,,,,X,,,,
-20,Emma,Truswell,Emma Truswell,Programme Lead,Permanent,2,63,Richard Stirling,,,,X,,,,,,,,,,,X,X,,,,,,,,,,
-21,Fiona,Smith,Fiona Smith,Researcher (OD4D),Fixed-term,0,43,Liz Carolan,,,,X,,,,,,,,,,,,,,X,,,,,,,,
-22,NK,NK,Franchise Manager,Franchise Manager,Permanent,0,63,Richard Stirling,,,X,,,,,,,X,,,,,,,,,,X,,,,,,
-23,Gavin,Starks,Gavin Starks,CEO,Permanent,15,,,X,X,X,,,,X,,X,X,,X,,,,,,,,X,,,,,,
-24,Georgia,Phillips,Georgia Phillips,Head of Commercial Partnerships,Permanent,1,34,Jeni Tennison,X,,,,,,,,,,,,,,X,,,,,X,,,,,,
-25,Hannah,Redler,Hannah Redler,Art Programme,Associate,0,23,Gavin Starks,,,,,,,,,X,,,,,,,X,,,,,,,,,,
-26,NK,NK,Head of Content,Head of Content,Permanent,1,23,Gavin Starks,,,,,,,,,X,X,,,,,,,,,,,,,X,,,
-27,NK,NK,Head of Product,Head of Product,Permanent,0,23,Gavin Starks,X,X,,X,,,X,,,X,,,,,,,,,,X,,,,,,
-28,Helen,Desmond,Helen Desmond,Communications,Associate,0,19,Emma Thwaites,,,,,X,,,,X,,,,,,,,,,,,,X,,,,
-29,Iraia,Monteagudo,Iraia Monteagudo,Operations Team Leader,Permanent,0,31,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,,X,
-30,Jack,Hardinges,Jack Hardinges,Research Assistant,Fixed-term,0,79,Tom Health,,,,,X,,,,,,,,,,,,,X,,,,,,,,
-31,Jade,Croucher,Jade Croucher,Operations Manager,Permanent,7,23,Gavin Starks,,,,,,,,X,,X,,,,,,,,,,,,,,,X,
-32,James,Smith,James Smith,Head of R&D,Permanent,2,34,Jeni Tennison,,,,,,X,,,,X,,,,,,,,,,,X,,,,,
-33,Jamie,Fawcett,Jamie Fawcett,Research Assistant,Fixed-term,0,79,Tom Health,,,,,X,,,,,,,,,,,,,X,,,,,,,,
-34,Jeni,Tennison,Jeni Tennison,Deputy CEO & Technical Director,Permanent,11,23,Gavin Starks,,,,X,X,X,X,,,X,,,,,,,X,,,,X,,,,,
-35,Joe,Packman,Joe Packman,Business Support Administrator,Permanent,0,31,Jade Croucher,,,,,,X,,X,,,,,,,,,,,,,,,,,X,
-36,Julie,Freeman,Julie Freeman,Art Programme,Associate,0,23,Gavin Starks,,,,,,,,,X,,,,,,,X,,,,,,,,,,
-37,NK,NK,Junior Developer,Junior Developer,Permanent,0,32,James Smith,,,,,,X,,,,,,,,,,,,,,,X,,,,,
-38,Kateryna,Onyiliogwu,Kateryna Onyiliogwu,Business Support Administrator,Permanent,0,31,Jade Croucher,,,,,X,,,X,,,,,,,,,,,,,,,,,X,
-39,Kathryn,Corrick,Kathryn Corrick,Content,Associate,4,23,Gavin Starks,,,,,,,,,X,,,,,,,,,,,,,,X,X,,
-40,Keren,Bowman,Keren Bowman,Events Coordinator,Permanent,1,39,Kathryn Corrick,X,,X,X,X,X,,,X,,,,,,,,,,,,,,,X,,
-41,Leigh,Dodds,Leigh Dodds,Senior Technical Consultant,Permanent,0,63,Richard Stirling,,,,X,,,,,,,,,,,,,X,,,X,,,,,,
-42,Leonard,Mack,Leonard Mack,Research Bid Writer,Fixed-term,0,79,Tom Health,,,,,X,X,,,,,,X,,,,,,X,,,,,,,,
-43,Liz,Carolan,Liz Carolan,International Development Manager,Fixed-term,1,63,Richard Stirling,,,,X,,,,,,,,X,,,,,X,,,,,,,,,
-44,Louise,Burke,Louise Burke,Finance & Compliance Director,Permanent,2,23,Gavin Starks,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,
-45,Mandy,Costello,Mandy Costello,Training Projects and Delivery Manager,Permanent,1,71,Simon Bullmore,,X,,,,,,,,,,,,,,X,,,,,,,,,,
-46,Maria,Demetriou,Maria Demetriou,Business Support Administrator ,Permanent,0,31,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,X,,
-47,NK,NK,Membership Business Manager,Membership Business Manager,Permanent,2,23,Gavin Starks,X,,,,,,,,,X,,X,,,,,,,,X,,,,,,
-48,Michelle,Prescott,Michelle Prescott,People,Associate,1,23,Gavin Starks,,,,,,,,X,,,,,,,,,,,,,,,,,,X
-49,NK,NK,Open Data Story Producer,Open Data Story Producer,Permanent,0,79,Tom Health,,,,,X,,,,,,,,,,,X,,X,,,,,,,,
-50,Patrice,John-Baptiste,Patrice John-Baptiste,Communications,Permanent,0,19,Emma Thwaites,,,,,X,,,,X,,,,,,,,,,,,,X,,,,
-51,Patrik,Wagner,Patrik Wagner,Commercial Sales,Fixed-term,0,23,Gavin Starks,X,,,,,,,,,,,X,,,,,,,,,,,,,,
-52,NK,NK,PeopleDev,PeopleDev,Permanent,0,34,Jeni Tennison,,,,,,,,X,,,,,,,,,,,,,,,,,,X
-53,NK,NK,PhD Student 1,PhD Student 1,Fixed-term,0,60,Research Scientist/Engineer,,,,,,X,,,,,,,,,,,,X,,,,,,,,
-54,NK,NK,PhD Student 2,PhD Student 2,Fixed-term,0,60,Research Scientist/Engineer,,,,,,X,,,,,,,,,,,,X,,,,,,,,
-55,Phil,Lang,Phil Lang,Digital Production,Permanent,0,39,Kathryn Corrick,,,,X,X,,,,X,,,,,,,,,,,,,,X,,,
-56,NK,NK,Programme Support,Programme Support,Permanent,0,31,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,,X,
-57,NK,NK,Research Intern 3,Research Intern 3,Fixed-term,0,79,Tom Health,,,,,X,X,,,,,,,,,,,,X,,,X,,,,,
-58,NK,NK,Research Intern 4,Research Intern 4,Fixed-term,0,79,Tom Health,,,,,X,X,,,,,,,,,,,,X,,,X,,,,,
-59,NK,NK,Research Project Manager,Research Project Manager,Permanent,0,79,Tom Health,,,,,X,X,,,,,,,,,,X,,,,,,,,,,
-60,NK,NK,Research Scientist/Engineer,Research Scientist/Engineer,Permanent,2,79,Tom Health,,,,,,X,,,,,,,,,,,,X,,,,,,,,
-61,NK,NK,Researcher (Social Sciences),Researcher (Social Sciences),Permanent,0,79,Tom Health,,,,,X,,,,,,,,,,,,,X,,,,,,,,
-62,Richard,Norris,Richard Norris,Innovation Unit Project Manager,Permanent,0,34,Jeni Tennison,,,,X,X,X,,,,,,,,,,X,,,,,,,,,,
-63,Richard,Stirling,Richard Stirling,International Director,Permanent,10,23,Gavin Starks,,,X,X,,,X,,,X,,X,,,,,,,,,,,,,,
-64,Roderick,Montgomery,Roderick Montgomery,Executive Support,Temp,0,31,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,,X,
-65,NK,NK,Sales (Membership & Training),Sales (Membership & Training),Permanent,0,47,Membership Business Manager,X,X,,,,,,,,,,X,,,,,,,,,,,,,,
+14,Dawn,Duhaney,Dawn Duhaney,Junior Analyst,Permanent,0,21,Emma Truswell,,,,X,,,,,,,,,,,,,,X,,,,,,,,
+15,NK,NK,Developer,Developer,Permanent,0,33,James Smith,,,,,,X,,,,,,,,,,,,,,,X,,,,,
+16,NK,NK,Digital Marketing Manager,Digital Marketing Manager,Permanent,0,48,Membership Business Manager,X,X,,X,X,X,,,X,,,,X,,,,,,,,,,,,,
+17,NK,NK,Digital Producer,Digital Producer,Permanent,0,27,Head of Content,,,,,,,,,X,,,,,,,,,,,,,,X,,,
+18,Ellen,Broad,Ellen Broad,Policy Advisor,Permanent,0,35,Jeni Tennison,,,,X,X,,X,,,,,,,,,,X,,,,,,,,,
+19,Emma,Galal,Emma Galal,Executive Support,Permanent,0,32,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,,X,
+20,Emma,Thwaites,Emma Thwaites,Communications,Associate,2,24,Gavin Starks,,,,,X,,X,,X,,,,,,,,,,,,,X,,,,
+21,Emma,Truswell,Emma Truswell,Programme Lead,Permanent,2,64,Richard Stirling,,,,X,,,,,,,,,,,X,X,,,,,,,,,,
+22,Fiona,Smith,Fiona Smith,Researcher (OD4D),Fixed-term,0,44,Liz Carolan,,,,X,,,,,,,,,,,,,,X,,,,,,,,
+23,NK,NK,Franchise Manager,Franchise Manager,Permanent,0,64,Richard Stirling,,,X,,,,,,,X,,,,,,,,,,X,,,,,,
+24,Gavin,Starks,Gavin Starks,CEO,Permanent,15,,,X,X,X,,,,X,,X,X,,X,,,,,,,,X,,,,,,
+25,Georgia,Phillips,Georgia Phillips,Head of Commercial Partnerships,Permanent,1,35,Jeni Tennison,X,,,,,,,,,,,,,,X,,,,,X,,,,,,
+26,Hannah,Redler,Hannah Redler,Art Programme,Associate,0,24,Gavin Starks,,,,,,,,,X,,,,,,,X,,,,,,,,,,
+27,NK,NK,Head of Content,Head of Content,Permanent,1,24,Gavin Starks,,,,,,,,,X,X,,,,,,,,,,,,,X,,,
+28,NK,NK,Head of Product,Head of Product,Permanent,0,24,Gavin Starks,X,X,,X,,,X,,,X,,,,,,,,,,X,,,,,,
+29,Helen,Desmond,Helen Desmond,Communications,Associate,0,20,Emma Thwaites,,,,,X,,,,X,,,,,,,,,,,,,X,,,,
+30,Iraia,Monteagudo,Iraia Monteagudo,Operations Team Leader,Permanent,0,32,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,,X,
+31,Jack,Hardinges,Jack Hardinges,Research Assistant,Fixed-term,0,79,Tom Health,,,,,X,,,,,,,,,,,,,X,,,,,,,,
+32,Jade,Croucher,Jade Croucher,Operations Manager,Permanent,7,24,Gavin Starks,,,,,,,,X,,X,,,,,,,,,,,,,,,X,
+33,James,Smith,James Smith,Head of R&D,Permanent,2,35,Jeni Tennison,,,,,,X,,,,X,,,,,,,,,,,X,,,,,
+34,Jamie,Fawcett,Jamie Fawcett,Research Assistant,Fixed-term,0,79,Tom Health,,,,,X,,,,,,,,,,,,,X,,,,,,,,
+35,Jeni,Tennison,Jeni Tennison,Deputy CEO & Technical Director,Permanent,11,24,Gavin Starks,,,,X,X,X,X,,,X,,,,,,,X,,,,X,,,,,
+36,Joe,Packman,Joe Packman,Business Support Administrator,Permanent,0,32,Jade Croucher,,,,,,X,,X,,,,,,,,,,,,,,,,,X,
+37,Julie,Freeman,Julie Freeman,Art Programme,Associate,0,24,Gavin Starks,,,,,,,,,X,,,,,,,X,,,,,,,,,,
+38,NK,NK,Junior Developer,Junior Developer,Permanent,0,33,James Smith,,,,,,X,,,,,,,,,,,,,,,X,,,,,
+39,Kateryna,Onyiliogwu,Kateryna Onyiliogwu,Business Support Administrator,Permanent,0,32,Jade Croucher,,,,,X,,,X,,,,,,,,,,,,,,,,,X,
+40,Kathryn,Corrick,Kathryn Corrick,Content,Associate,4,24,Gavin Starks,,,,,,,,,X,,,,,,,,,,,,,,X,X,,
+41,Keren,Bowman,Keren Bowman,Events Coordinator,Permanent,1,40,Kathryn Corrick,X,,X,X,X,X,,,X,,,,,,,,,,,,,,,X,,
+42,Leigh,Dodds,Leigh Dodds,Senior Technical Consultant,Permanent,0,64,Richard Stirling,,,,X,,X,,,,,,,,,,,X,,,X,,,,,,
+43,Leonard,Mack,Leonard Mack,Research Bid Writer,Fixed-term,0,79,Tom Health,,,,,X,X,,,,,,X,,,,,,X,,,,,,,,
+44,Liz,Carolan,Liz Carolan,International Development Manager,Fixed-term,1,64,Richard Stirling,,,,X,,,,,,,,X,,,,,X,,,,,,,,,
+45,Louise,Burke,Louise Burke,Finance & Compliance Director,Permanent,2,24,Gavin Starks,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,
+46,Mandy,Costello,Mandy Costello,Training Projects and Delivery Manager,Permanent,1,71,Simon Bullmore,,X,,,,,,,,,,,,,,X,,,,,,,,,,
+47,Maria,Demetriou,Maria Demetriou,Business Support Administrator ,Permanent,0,32,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,X,,
+48,NK,NK,Membership Business Manager,Membership Business Manager,Permanent,2,24,Gavin Starks,X,,,,,,,,,X,,X,,,,,,,,X,,,,,,
+49,Michelle,Prescott,Michelle Prescott,People,Associate,1,24,Gavin Starks,,,,,,,,X,,,,,,,,,,,,,,,,,,X
+50,NK,NK,Open Data Story Producer,Open Data Story Producer,Permanent,0,79,Tom Health,,,,,X,,,,,,,,,,,X,,X,,,,,,,,
+51,Patrice,John-Baptiste,Patrice John-Baptiste,Communications,Permanent,0,20,Emma Thwaites,,,,,X,,,,X,,,,,,,,,,,,,X,,,,
+52,Patrik,Wagner,Patrik Wagner,Commercial Sales,Fixed-term,0,24,Gavin Starks,X,,,,,,,,,,,X,,,,,,,,,,,,,,
+53,NK,NK,PeopleDev,PeopleDev,Permanent,0,35,Jeni Tennison,,,,,,,,X,,,,,,,,,,,,,,,,,,X
+54,NK,NK,PhD Student 1,PhD Student 1,Fixed-term,0,61,Research Scientist/Engineer,,,,,,X,,,,,,,,,,,,X,,,,,,,,
+55,NK,NK,PhD Student 2,PhD Student 2,Fixed-term,0,61,Research Scientist/Engineer,,,,,,X,,,,,,,,,,,,X,,,,,,,,
+56,Phil,Lang,Phil Lang,Digital Production,Permanent,0,40,Kathryn Corrick,,,,X,X,,,,X,,,,,,,,,,,,,,X,,,
+57,NK,NK,Programme Support,Programme Support,Permanent,0,32,Jade Croucher,,,,,,,,X,,,,,,,,,,,,,,,,,X,
+58,NK,NK,Research Intern 3,Research Intern 3,Fixed-term,0,79,Tom Health,,,,,X,X,,,,,,,,,,,,X,,,X,,,,,
+59,NK,NK,Research Intern 4,Research Intern 4,Fixed-term,0,79,Tom Health,,,,,X,X,,,,,,,,,,,,X,,,X,,,,,
+60,NK,NK,Research Project Manager,Research Project Manager,Permanent,0,79,Tom Health,,,,,X,X,,,,,,,,,,X,,,,,,,,,,
+61,NK,NK,Research Scientist/Engineer,Research Scientist/Engineer,Permanent,2,79,Tom Health,,,,,,X,,,,,,,,,,,,X,,,,,,,,
+62,NK,NK,Researcher (Social Sciences),Researcher (Social Sciences),Permanent,0,79,Tom Health,,,,,X,,,,,,,,,,,,,X,,,,,,,,
+63,Richard,Norris,Richard Norris,Innovation Unit Project Manager,Permanent,0,35,Jeni Tennison,,,,X,X,X,,,,,,,,,,X,,,,,,,,,,
+64,Richard,Stirling,Richard Stirling,International Director,Permanent,10,24,Gavin Starks,,,X,X,,,X,,,X,,X,,,,,,,,,,,,,,
+65,NK,NK,Sales (Membership & Training),Sales (Membership & Training),Permanent,0,48,Membership Business Manager,X,X,,,,,,,,,,X,,,,,,,,,,,,,,
 66,Sam,Haines,Sam Haines,Training Projects and Delivery Manager,Permanent,0,71,Simon Bullmore,,X,,,,,,,,,,,,,,X,,,,,,,,,,
-67,Sam,Michel,Sam Michel,Summit Programme Delivery,Associate,0,40,Keren Bowman,,,,,,,,,X,,,,,,,X,,,,,,,,,,
-68,Sam,Pikesley,Sam Pikesley,Head of Robots,Permanent,0,34,Jeni Tennison,,,,,,X,,,,,,,,,,,,,,,X,,,,,
-69,NK,NK,Services Intern 1,Services Intern 1,Fixed-term,0,63,Richard Stirling,,,,X,,,,,,,,,,,,,,X,,,,,,,,
-70,NK,NK,Services Intern 2,Services Intern 2,Fixed-term,0,63,Richard Stirling,,,,X,,,,,,,,,,,,,,X,,,,,,,,
-71,Simon,Bullmore,Simon Bullmore,Business Manager (Training),Permanent,5,23,Gavin Starks,,X,,,,,,,,X,,X,,,,,,,,,,,,,,
+67,Sam,Michel,Sam Michel,Summit Programme Delivery,Associate,0,41,Keren Bowman,,,,,,,,,X,,,,,,,X,,,,,,,,,,
+68,Sam,Pikesley,Sam Pikesley,Head of Robots,Permanent,0,35,Jeni Tennison,,,,,,X,,,,,,,,,,,,,,,X,,,,,
+69,NK,NK,Services Intern 1,Services Intern 1,Fixed-term,0,64,Richard Stirling,,,,X,,,,,,,,,,,,,,X,,,,,,,,
+70,NK,NK,Services Intern 2,Services Intern 2,Fixed-term,0,64,Richard Stirling,,,,X,,,,,,,,,,,,,,X,,,,,,,,
+71,Simon,Bullmore,Simon Bullmore,Business Manager (Training),Permanent,5,24,Gavin Starks,,X,,,,,,,,X,,X,,,,,,,,,,,,,,
 72,NK,NK,Startup Programme Coordinator,Startup Programme Coordinator,Permanent,0,82,Ulrich Atz,,,,X,,,,,,,,,,X,,X,,,,,,,,,,
 73,NK,NK,Startup Programme Support,Startup Programme Support,Permanent,0,82,Ulrich Atz,,,,X,,,,,,,,,,,,,,,,,,,,,X,
-74,Steff,Warwick,Steff Warwick,Business Support Administrator,Permanent,0,45,Mandy Costello,,X,,,,,,,,,,,,,,,,,,,,,,,X,
-75,Stephanie,Dunstan,Stephanie Dunstan,Finance Assistant,Permanent,0,44,Louise Burke,,,,,,,,X,,,X,,,,,,,,,,,,,,,
-76,Stuart,Harrison,Stuart Harrison,Developer,Permanent,0,34,Jeni Tennison,,,,,,X,,,,,,,,,,,,,,,X,,,,,
-77,Sumika,Sakanishi,Sumika Sakanishi,Product Manager,Permanent,0,34,Jeni Tennison,,,,,,X,,,,,,,,,,,,,,X,,,,,,
-78,NK,NK,Technical Consultant,Technical Consultant,Permanent,0,34,Jeni Tennison,,,,X,,,,,,,,,,,,,X,,,,,,,,,
-79,Tom,Health,Tom Health,Head of Research,Permanent,10,34,Jeni Tennison,,,,,X,X,,,,X,,,,,,,,X,,,,,,,,
-80,Tom,Tharakan,Tom Tharakan,Bid Manager,Permanent,0,63,Richard Stirling,,X,,X,X,X,,,,,,X,,,,,,,,,,,,,,
+74,Steff,Warwick,Steff Warwick,Business Support Administrator,Permanent,0,46,Mandy Costello,,X,,,,,,,,,,,,,,,,,,,,,,,X,
+75,Stephanie,Dunstan,Stephanie Dunstan,Finance Assistant,Permanent,0,45,Louise Burke,X,X,X,,,,,X,,,X,,,,,,,,,,,,,,,
+76,Stuart,Harrison,Stuart Harrison,Developer,Permanent,0,35,Jeni Tennison,,,,,,X,,,,,,,,,,,,,,,X,,,,,
+77,Sumika,Sakanishi,Sumika Sakanishi,Product Manager,Permanent,0,35,Jeni Tennison,,,,,,X,,,,,,,,,,,,,,X,,,,,,
+78,NK,NK,Technical Consultant,Technical Consultant,Permanent,0,35,Jeni Tennison,,,,X,,,,,,,,,,,,,X,,,,,,,,,
+79,Tom,Health,Tom Health,Head of Research,Permanent,10,35,Jeni Tennison,,,,,X,X,,,,X,,,,,,,,X,,,,,,,,
+80,Tom,Tharakan,Tom Tharakan,Bid Manager,Permanent,0,64,Richard Stirling,,X,,X,X,X,,,,,,X,,,,,,,,,,,,,,
 81,NK,NK,Trainer,Trainer,Associate,0,71,Simon Bullmore,,X,,,,,,,,,,,,,,,,,X,,,,,,,
-82,Ulrich,Atz,Ulrich Atz,Startup Programme Manager,Permanent,2,63,Richard Stirling,,,,X,,,,,,,,,,X,,,,,,X,,,,,,
-83,William,Gerry,William Gerry,Junior Consultant,Permanent,0,20,Emma Truswell,,,,X,,,,,,,,,,,,X,X,,,,,,,,,</script>
+82,Ulrich,Atz,Ulrich Atz,Startup Programme Manager,Permanent,2,64,Richard Stirling,,,,X,,,,,,,,,,X,,,,,,X,,,,,,
+83,William,Gerry,William Gerry,Junior Consultant,Permanent,0,21,Emma Truswell,,,,X,,,,,,,,,,,,X,X,,,,,,,,,</script>
 <script>
 
-var diameter = 960;
-var radius = diameter / 2;
+var diameter = 960,
+    radius = diameter / 2;
+
+var width = 960,
+    height = 500;
 
 var cluster = d3.layout.cluster()
     .size([360, radius - 120]);
@@ -129,15 +159,38 @@ var tree = d3.layout.tree()
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#line-management")
     .attr("width", radius * 2)
     .attr("height", radius * 2)
   .append("g")
     .attr("transform", "translate(" + radius + "," + radius + ")");
 
+var svg2 = d3.select("#programmes")
+    .attr("width", width)
+    .attr("height", height);
+
+var svg3 = d3.select("#functions")
+    .attr("width", width)
+    .attr("height", height);
+
 var peopleLookup = {};
 var parentLookup = {};
 var peopleRootId;
+
+var programmes = ["Membership", "Training", "Franchise", "Services", "Evidence", "R&D", "Strategy", "Environment", "Culture"];
+var functions = ["leadership", "finance", "sales", "marketing", "engagement", "account mgmt", "project mgmt", "consultancy", "research", "training", "product mgmt", "tech dev", "communications", "production", "events", "team support", "people dev"];
+
+var programmeRegex = new RegExp(programmes.join('|'));
+var functionRegex = new RegExp(functions.join('|'));
+
+var programmeLookup = {};
+for (p in programmes) {
+  programmeLookup[programmes[p]] = [];
+}
+var functionLookup = {};
+for (f in functions) {
+  functionLookup[functions[f]] = [];
+}
 
 d3.csv.parse(document.getElementById('people').firstChild.nodeValue, function (d) {
   var person = {
@@ -145,8 +198,22 @@ d3.csv.parse(document.getElementById('people').firstChild.nodeValue, function (d
     name: d["Reference Name"],
     inPost: d["First Name"] !== "NK",
     roleTitle: d["Role Title"],
-    parent: +d["Reports To ID"]
+    parent: +d["Reports To ID"],
+    programmes: [],
+    functions: []
   };
+  var m;
+  for (var col in d) {
+    if (d[col] == "X") {
+      if (m = col.match(programmeRegex)) {
+        person.programmes.push(m[0]);
+        programmeLookup[m[0]].push(person.id);
+      } else if (m = col.match(functionRegex)) {
+        person.functions.push(m[0]);
+        functionLookup[m[0]].push(person.id);
+      }
+    }
+  }
   peopleLookup[person.id] = person;
   if (parentLookup[person.parent] == undefined) {
     parentLookup[person.parent] = [];
@@ -176,40 +243,146 @@ var createHierarchy = function (id) {
   return p;
 };
 
-var root = createHierarchy(peopleRootId);
+var createProgrammeGraph = function () {
+  var graph = {
+    nodes: [],
+    links: []
+  };
+  for (p in peopleLookup) {
+    var person = peopleLookup[p];
+    graph.nodes[person.id - 1] = person;
+  }
+  programmes.forEach(function (programme) {
+    graph.nodes.push({ name: programme, type: "programme" });
+    programmeLookup[programme].forEach(function (id) {
+      graph.links.push({
+        source: graph.nodes.length - 1,
+        target: id - 1
+      });
+    });
+  });
+  return graph;
+};
 
-// uncomment to get all the leaf nodes at the same level
-// var nodes = cluster.nodes(root);
-// var links = cluster.links(nodes);
+var createFunctionGraph = function () {
+  var graph = {
+    nodes: [],
+    links: []
+  };
+  for (p in peopleLookup) {
+    var person = peopleLookup[p];
+    graph.nodes[person.id - 1] = person;
+  }
+  functions.map(function (func) {
+    graph.nodes.push({ name: func, type: "programme" });
+    functionLookup[func].map(function (id) {
+      graph.links.push({
+        source: graph.nodes.length - 1,
+        target: id - 1
+      });
+    });
+  });
+  return graph;
+};
 
-// leaf nodes at different levels
-var nodes = tree.nodes(root);
-var links = tree.links(nodes);
+var drawLineMgmt = function (root) {
+  // uncomment to get all the leaf nodes at the same level
+  // var nodes = cluster.nodes(root);
+  // var links = cluster.links(nodes);
 
-var link = svg.selectAll("path.link")
-    .data(links)
-  .enter().append("path")
-    .attr("class", "link")
-    .attr("d", diagonal);
+  // leaf nodes at different levels
+  var nodes = tree.nodes(root);
+  var links = tree.links(nodes);
 
-var node = svg.selectAll("g.node")
-    .data(nodes)
-  .enter().append("g")
-    .attr("class", function (d) { return "node " + (d.inPost ? "hired" : "hiring")})
-    .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+  var link = svg.selectAll("path.link")
+      .data(links)
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", diagonal);
 
-node.append("title")
-    .text(function(d) { return d.roleTitle; });
+  var node = svg.selectAll("g.node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", function (d) { return "node " + (d.inPost ? "hired" : "hiring")})
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
 
-node.append("circle")
-    .attr("r", 4.5);
+  node.append("title")
+      .text(function(d) { return d.roleTitle; });
 
-node.append("text")
-    .attr("dy", ".31em")
-    .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-    .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
-    .text(function(d) { return d.name; });
+  node.append("circle")
+      .attr("r", 4.5);
 
-d3.select(self.frameElement).style("height", radius * 2 + "px");
+  node.append("text")
+      .attr("dy", ".31em")
+      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+      .text(function(d) { return d.name; });
+
+  d3.select(self.frameElement).style("height", radius * 2 + "px");
+};
+
+drawLineMgmt(createHierarchy(peopleRootId));
+
+var drawGraph = function (graph, svg) {
+  var nodes = graph.nodes.slice(),
+      links = [],
+      bilinks = [];
+
+  var force = d3.layout.force()
+      .linkDistance(10)
+      .linkStrength(2)
+      .size([width, height]);
+
+  graph.links.forEach(function(link) {
+    var s = nodes[link.source],
+        t = nodes[link.target],
+        i = {}; // intermediate node
+    nodes.push(i);
+    links.push({source: s, target: i}, {source: i, target: t});
+    bilinks.push([s, i, t]);
+  });
+
+  force
+      .nodes(nodes)
+      .links(links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(bilinks)
+    .enter().append("path")
+      .attr("class", "link");
+
+  var node = svg.selectAll(".node")
+      .data(graph.nodes)
+    .enter().append("circle")
+      .attr("class", function (d) { 
+        var c = "node ";
+        if (d.type == undefined) {
+          c += d.inPost ? "hired" : "hiring"
+        } else {
+          c += d.type;
+        }
+        return c;
+      })
+      .attr("r", 5)
+      .call(force.drag);
+
+  node.append("title")
+      .text(function(d) { return d.name; });
+
+  force.on("tick", function() {
+    link.attr("d", function(d) {
+      return "M" + d[0].x + "," + d[0].y
+          + "S" + d[1].x + "," + d[1].y
+          + " " + d[2].x + "," + d[2].y;
+    });
+    node.attr("transform", function(d) {
+      return "translate(" + d.x + "," + d.y + ")";
+    });
+  });
+};
+
+drawGraph(createProgrammeGraph(), svg2);
+drawGraph(createFunctionGraph(), svg3);
 
 </script>
