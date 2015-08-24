@@ -81,15 +81,15 @@ path.fade {
   </div>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script type="text/csv" id="people">Member Id,First Name,Last Name,In Post,Gender,Reference Name,Role Title,Role Type,# Reports,Reports To ID,Reports To,Membership (14),Learning (15),Franchise (6),Services (26),Evidence (21),R&D (26),Strategy (7),Environment (14),Culture (17),per programme,leadership (13),finance (4),sales (10),marketing (1),engagement (7),account mgmt (7),project mgmt (11),consultancy (9),research (18),training (5),product mgmt (11),software (11),communications (2),production (6),events (2),team support (13),people dev (3)
+<script type="text/csv" id="people">Member Id,First Name,Last Name,In Post,Gender,Reference Name,Role Title,Role Type,# Reports,Reports To ID,Reports To,Membership (14),Learning (15),Franchise (6),Services (26),Evidence (21),Labs (26),Strategy (7),Environment (14),Culture (17),per programme,leadership (13),finance (4),sales (10),marketing (1),engagement (7),account mgmt (7),project mgmt (11),consultancy (9),research (18),training (5),product mgmt (11),software (11),communications (2),production (6),events (2),team support (13),people dev (3)
 1,NK,NK,FALSE,NK,Account Manager,Account Manager,Permanent,0,71,Richard Stirling,,,,X,,,,,,100%,,,,,,X,,,,,,,,,,,
-2,Adam,Hinchliff,FALSE,male,Adam Hinchliff,Research Project Manager,Fixed-term,0,85,Tom Health,,,,,X,X,,,,50%,,,,,,,X,,,,,,,,,,
+2,Adam,Hinchliff,TRUE,male,Adam Hinchliff,Research Project Manager,Fixed-term,0,85,Tom Heath,,,,,X,X,,,,50%,,,,,,,X,,,,,,,,,,
 3,Adam,Sven Johnson,TRUE,male,Adam Sven Johnson,Developer,Permanent,0,40,James Smith,,,,,,X,,,,100%,,,,,,,,,,,,X,,,,,
-4,Adrian,Philpott,TRUE,male,Adrian Philpott,Brand Design,Associate,0,47,Kathryn Corrick,,,,,,X,,,X,50%,,,,,,,,,,,,,,X,,,
+4,Adrian,Philpott,TRUE,male,Adrian Philpott,Brand Design,Associate,0,50,Laura Davis,,,,,,X,,,X,50%,,,,,,,,,,,,,,X,,,
 5,Alison,Walters,TRUE,female,Alison Walters,Finance,Permanent,1,55,Louise Burke,,,,X,X,X,,X,,25%,,X,,,,,,,,,,,,,,,
-6,Amanda,Smith,TRUE,female,Amanda Smith,Community Engagement Manager,Permanent,0,85,Tom Health,,,,,X,X,,,,50%,,,,,X,,,,,,,,,,,,
-7,Andrea,Cox,TRUE,female,Andrea Cox,Membership Manager,Permanent,1,33,Georgia Phillips,X,,,,,,,,,100%,,,,,X,X,,,,,,,,,,,
-8,Anna,Scott,TRUE,female,Anna Scott,Writer / Editor,Permanent,0,47,Kathryn Corrick,,,,X,X,,,,X,33%,,,,,,,,,,,,,,X,,,
+6,Amanda,Smith,TRUE,female,Amanda Smith,Community Engagement Manager,Permanent,0,85,Tom Heath,,,,,X,X,,,,50%,,,,,X,,,,,,,,,,,,
+7,Andrea,Cox,TRUE,female,Andrea Cox,Membership Manager,Permanent,1,66,Rachel Leech,X,,,,,,,,,100%,,,,,X,X,,,,,,,,,,,
+8,Anna,Scott,TRUE,female,Anna Scott,Writer / Editor,Permanent,0,50,Laura Davis,,,,X,X,,,,X,33%,,,,,,,,,,,,,,X,,,
 9,Anneza,Pitsialis,TRUE,female,Anneza Pitsialis,Programme Administrator,Permanent,0,71,Richard Stirling,,,X,,,,,,,100%,,,,,,X,,,,,,,,,,,
 10,NK,NK,FALSE,NK,Apprentice Business Support,Apprentice Business Support,Fixed-term,0,46,Kateryna Onyiliogwu,,,,,,,,X,,100%,,,,,,,,,,,,,,,,X,
 11,Ben,Couston,TRUE,male,Ben Couston,R&D Intern,Fixed-term,0,40,James Smith,,,,,,X,,,,100%,,,,,,,,,X,,,X,,,,,
@@ -113,44 +113,44 @@ path.fade {
 29,Emma,Truswell,TRUE,female,Emma Truswell,Programme Lead,Permanent,4,71,Richard Stirling,,,,X,,,,,,100%,,,,,,X,X,X,,,,,,,,,
 30,Fiona,Smith,TRUE,female,Fiona Smith,Researcher (OD4D),Fixed-term,0,54,Liz Carolan,,,,X,,,,,,100%,,,,,,,,,X,,,,,,,,
 31,NK,NK,FALSE,NK,Franchise Manager,Franchise Manager,Permanent,0,71,Richard Stirling,,,X,,,,,,,100%,X,,,,,,,,,,X,,,,,,
-32,Gavin,Starks,TRUE,male,Gavin Starks,CEO,Permanent,15,,,X,X,X,,,,X,,X,20%,X,,X,,,,,,,,X,,,,,,
-33,Georgia,Phillips,TRUE,female,Georgia Phillips,Head of Commercial Partnerships,Permanent,1,42,Jeni Tennison,X,,,,,,,,,100%,,,,,,X,,,,,X,,,,,,
-34,Hannah,Redler,TRUE,female,Hannah Redler,Art Programme,Associate,0,32,Gavin Starks,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,
+32,Gavin,Starks,TRUE,male,Gavin Starks,CEO,Permanent,11,,,X,X,X,,,,X,,X,20%,X,,X,,,,,,,,X,,,,,,
+33,Georgia,Phillips,TRUE,female,Georgia Phillips,Head of Commercial Partnerships,Permanent,0,42,Jeni Tennison,X,,,,,,,,,100%,,,,,,X,,,,,X,,,,,,
+34,Hannah,Redler,TRUE,female,Hannah Redler,Art Programme,Associate,0,50,Laura Davis,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,
 35,NK,NK,FALSE,NK,Head of Product,Head of Product,Permanent,0,32,Gavin Starks,X,X,,X,,,X,,,25%,X,,,,,,,,,,X,,,,,,
 36,Iraia,Monteagudo,TRUE,female,Iraia Monteagudo,Startup Programme Assistant,Temp,0,88,Ulrich Atz,,,,X,,,,,,100%,,,,,,X,,,,,,,,,,X,
 37,Irina,Bolychevsky,TRUE,female,Irina Bolychevsky,Open Data Certificate Community Builder,Fixed-term,0,83,Sumika Sakanishi,,,,,,X,,,,100%,,,,,X,,,,,,X,,,,,,
-38,Jack,Hardinges,TRUE,male,Jack Hardinges,Research Assistant,Fixed-term,0,85,Tom Health,,,,,X,,,,,100%,,,,,,,,,X,,,,,,,,
+38,Jack,Hardinges,TRUE,male,Jack Hardinges,Research Assistant,Fixed-term,0,85,Tom Heath,,,,,X,,,,,100%,,,,,,,,,X,,,,,,,,
 39,Jade,Croucher,TRUE,female,Jade Croucher,Operations Manager,Permanent,3,32,Gavin Starks,,,,,,,,X,,100%,X,,,,,,,,,,,,,,,X,
 40,James,Smith,TRUE,male,James Smith,Head of R&D,Temp,5,42,Jeni Tennison,X,,,,,X,,,X,33%,X,,,,,,,,,,,X,,,,,
-41,Jamie,Fawcett,TRUE,male,Jamie Fawcett,Research Assistant,Fixed-term,0,85,Tom Health,,,,,X,,,,,100%,,,,,,,,,X,,,,,,,,
+41,Jamie,Fawcett,TRUE,male,Jamie Fawcett,Research Assistant,Fixed-term,0,85,Tom Heath,,,,,X,,,,,100%,,,,,,,,,X,,,,,,,,
 42,Jeni,Tennison,TRUE,female,Jeni Tennison,Deputy CEO & Technical Director,Permanent,10,32,Gavin Starks,,,,X,X,X,X,,,25%,X,,,,,,,X,,,,X,,,,,
-43,Joe,Packman,TRUE,male,Joe Packman,Digital Producer,Permanent,0,47,Kathryn Corrick,,,,,,,,,X,100%,,,,,,,,,,,,,,X,,,
-44,Julie,Freeman,TRUE,female,Julie Freeman,Art Programme,Associate,0,32,Gavin Starks,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,
+43,Joe,Packman,TRUE,male,Joe Packman,Digital Producer,Permanent,0,50,Laura Davis,,,,,,,,,X,100%,,,,,,,,,,,,,,X,,,
+44,Julie,Freeman,TRUE,female,Julie Freeman,Art Programme,Associate,0,50,Laura Davis,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,
 45,NK,NK,FALSE,NK,Junior Developer,Junior Developer,Permanent,0,40,James Smith,,,,,,X,,,,100%,,,,,,,,,,,,X,,,,,
 46,Kateryna,Onyiliogwu,TRUE,female,Kateryna Onyiliogwu,Operations Team Leader,Temp,4,39,Jade Croucher,,,,,X,,,X,,50%,,,,,,,,,,,,,,,,X,
-47,Kathryn,Corrick,TRUE,female,Kathryn Corrick,Content,Associate,5,32,Gavin Starks,,,,,,,,,X,100%,,,,,,,,,,,,,,X,X,,
-48,Kathryn,Pritchard,FALSE,female,Kathryn Pritchard,Services Intern,Fixed-term,0,29,Emma Truswell,,,,X,,,,,,100%,,,,,,,,,X,,,,,,,,
-49,Keren,Bowman,TRUE,female,Keren Bowman,Events Coordinator,Permanent,1,47,Kathryn Corrick,X,,,,,,,,X,50%,,,,,,,,,,,,,,,X,,
-50,Laura,Davis,FALSE,female,Laura Davis,Head of Content,Permanent,0,32,Gavin Starks,,,,,,,,,X,100%,X,,,,,,,,,,,,,X,,,
+47,Kathryn,Corrick,TRUE,female,Kathryn Corrick,Content,Associate,0,32,Gavin Starks,,,,,,,,,X,100%,,,,,,,,,,,,,,X,X,,
+48,Kathryn,Pritchard,TRUE,female,Kathryn Pritchard,Services Intern,Fixed-term,0,29,Emma Truswell,,,,X,,,,,,100%,,,,,,,,,X,,,,,,,,
+49,Keren,Bowman,TRUE,female,Keren Bowman,Events Coordinator,Permanent,1,50,Laura Davis,X,,,,,,,,X,50%,,,,,,,,,,,,,,,X,,
+50,Laura,Davis,TRUE,female,Laura Davis,Head of Content,Permanent,7,32,Gavin Starks,,,,,,,,,X,100%,X,,,,,,,,,,,,,X,,,
 51,Leigh,Dodds,TRUE,male,Leigh Dodds,Senior Technical Consultant,Permanent,0,71,Richard Stirling,,X,,X,,X,,,,33%,,,,,,,,X,X,X,X,X,,,,,
-52,Leonard,Mack,TRUE,male,Leonard Mack,Research Bid Writer,Fixed-term,0,85,Tom Health,,,,,X,X,,,,50%,,,X,,,,,,X,,,,,,,,
+52,Leonard,Mack,TRUE,male,Leonard Mack,Research Bid Writer,Fixed-term,0,85,Tom Heath,,,,,X,X,,,,50%,,,X,,,,,,X,,,,,,,,
 53,Lewis,Kille,TRUE,male,Lewis Kille,Business Support Administrator,Fixed-term,0,46,Kateryna Onyiliogwu,,,,,,,,X,,100%,,,,,,,,,,,,,,,,X,
 54,Liz,Carolan,TRUE,female,Liz Carolan,International Development Manager,Fixed-term,1,71,Richard Stirling,,,,X,,,,,,100%,,,X,,,,,X,,,,,,,,,
 55,Louise,Burke,TRUE,female,Louise Burke,Finance & Compliance Director,Permanent,3,32,Gavin Starks,,,,,,,X,X,X,33%,X,X,,,,,,,,,,,,,,,
 56,Mandy,Costello,TRUE,female,Mandy Costello,Training Projects and Delivery Manager,Permanent,1,76,Simon Bullmore,,X,,,,,,,,100%,,,,,,,X,,,,,,,,,,
-57,Maria,Demetriou,TRUE,female,Maria Demetriou,Finance Support,Temp,0,5,Alison Walters,,,,,,,,X,,100%,,X,,,,,,,,,,,,,,X,
-58,Michelle,Prescott,TRUE,female,Michelle Prescott,People,Associate,0,32,Gavin Starks,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X
-59,NK,NK,FALSE,NK,Open Data Story Producer,Open Data Story Producer,Permanent,0,85,Tom Health,,,,,X,,,,,100%,,,,,,,X,,X,,,,,,,,
+57,Maria,Demetriou,TRUE,female,Maria Demetriou,Finance Support,Fixed-term,0,5,Alison Walters,,,,,,,,X,,100%,,X,,,,,,,,,,,,,,X,
+58,Michelle,Prescott,TRUE,female,Michelle Prescott,People,Associate,0,77,Simone Giles,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X
+59,Stefan,Janusz,TRUE,male,Stefan Janusz,Open Data Story Producer,Permanent,0,85,Tom Heath,,,,,X,,,,,100%,,,,,,,X,,X,,,,,,,,
 60,Orsola,DeMarco,TRUE,female,Orsola DeMarco,Startup Programme Assistant,Permanent,0,88,Ulrich Atz,,,,X,,,,,,100%,,,,,,X,,,,,,,,,,X,
-61,Patrice,John-Baptiste,TRUE,female,Patrice John-Baptiste,Communications,Permanent,0,28,Emma Thwaites,,,,,X,,,,X,50%,,,,,,,,,,,,,X,,,,
-62,Patrik,Wagner,TRUE,male,Patrik Wagner,Commercial Sales,Fixed-term,0,32,Gavin Starks,X,,,,,,,,,100%,,,X,,,,,,,,,,,,,,
+61,Patrice,John-Baptiste,TRUE,female,Patrice John-Baptiste,Communications,Fixed-term,0,28,Emma Thwaites,,,,,X,,,,X,50%,,,,,,,,,,,,,X,,,,
+62,Patrik,Wagner,TRUE,male,Patrik Wagner,Commercial Sales,Fixed-term,0,66,Rachel Leech,X,,,,,,,,,100%,,,X,,,,,,,,,,,,,,
 63,NK,NK,FALSE,NK,PhD Student,PhD Student,Fixed-term,0,68,Research Scientist/Engineer,,,,,,X,,,,100%,,,,,,,,,X,,,,,,,,
 64,NK,NK,FALSE,NK,PhD Student,PhD Student,Fixed-term,0,68,Research Scientist/Engineer,,,,,,X,,,,100%,,,,,,,,,X,,,,,,,,
-65,Phil,Lang,TRUE,male,Phil Lang,Digital Production,Permanent,0,47,Kathryn Corrick,,,,X,X,,,,X,33%,,,,,,,,,,,,,,X,,,
-66,Rachel,Leech,FALSE,female,Rachel Leech,Membership Business Manager,Permanent,2,32,Gavin Starks,X,,,,,,,,,100%,X,,X,,,,,,,,X,,,,,,
-67,NK,NK,FALSE,NK,Research Intern 4,Research Intern 4,Fixed-term,0,85,Tom Health,,,,,X,X,,,,50%,,,,,,,,,X,,,X,,,,,
-68,NK,NK,FALSE,NK,Research Scientist/Engineer,Research Scientist/Engineer,Permanent,2,85,Tom Health,,,,,,X,,,,100%,,,,,,,,,X,,,,,,,,
-69,NK,NK,FALSE,NK,Researcher (Social Sciences),Researcher (Social Sciences),Permanent,0,85,Tom Health,,,,,X,,,,,100%,,,,,,,,,X,,,,,,,,
+65,Phil,Lang,TRUE,male,Phil Lang,Digital Production Editor,Permanent,0,50,Laura Davis,,,,X,X,,,,X,33%,,,,,,,,,,,,,,X,,,
+66,Rachel,Leech,TRUE,female,Rachel Leech,Membership Business Manager,Permanent,4,32,Gavin Starks,X,,,,,,,,,100%,X,,X,,,,,,,,X,,,,,,
+67,NK,NK,FALSE,NK,Research Intern 4,Research Intern 4,Fixed-term,0,85,Tom Heath,,,,,X,X,,,,50%,,,,,,,,,X,,,X,,,,,
+68,NK,NK,FALSE,NK,Research Scientist/Engineer,Research Scientist/Engineer,Permanent,2,85,Tom Heath,,,,,,X,,,,100%,,,,,,,,,X,,,,,,,,
+69,NK,NK,FALSE,NK,Researcher (Social Sciences),Researcher (Social Sciences),Permanent,0,85,Tom Heath,,,,,X,,,,,100%,,,,,,,,,X,,,,,,,,
 70,Richard,Norris,TRUE,male,Richard Norris,Innovation Unit Project Manager,Permanent,0,42,Jeni Tennison,,,,X,X,X,,,,33%,,,,,,,X,X,,,,,,,,,
 71,Richard,Stirling,TRUE,male,Richard Stirling,International Director,Permanent,8,32,Gavin Starks,,,X,X,,,X,,,33%,X,,X,,,,,X,,,,,,,,,
 72,NK,NK,FALSE,NK,Sales (Membership & Training),Sales (Membership & Training),Permanent,0,66,Rachel Leech,X,X,,,,,,,,50%,,,X,,,,,,,,,,,,,,
@@ -158,7 +158,7 @@ path.fade {
 74,Sam,Michel,TRUE,male,Sam Michel,Summit Programme Delivery,Associate,0,49,Keren Bowman,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,
 75,Sam,Pikesley,TRUE,male,Sam Pikesley,Head of Robots,Permanent,0,42,Jeni Tennison,,,,,,X,,,,100%,,,,,,,,,,,,X,,,,,
 76,Simon,Bullmore,TRUE,male,Simon Bullmore,Business Manager (Training),Permanent,6,32,Gavin Starks,,X,,,,,,,,100%,X,,X,,,,,,,,,,,,,,
-77,Simone,Giles,TRUE,female,Simone Giles,PeopleDev,Permanent,1,55,Louise Burke,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X
+77,Simone,Giles,TRUE,female,Simone Giles,PeopleDev,Permanent,2,55,Louise Burke,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X
 78,NK,NK,FALSE,NK,Startup Programme Coordinator,Startup Programme Coordinator,Permanent,0,88,Ulrich Atz,,,,X,,,,,,100%,,,,,X,,X,,,,,,,,,,
 79,Steff,Warwick,TRUE,female,Steff Warwick,Training Coordinator,Permanent,0,56,Mandy Costello,,X,,,,,,,,100%,,,,,,,,,,,,,,,,X,
 80,Stephanie,Dunstan,TRUE,female,Stephanie Dunstan,Finance Assistant,Permanent,0,55,Louise Burke,X,X,X,,,,,X,,25%,,X,,,,,,,,,,,,,,,
@@ -166,14 +166,14 @@ path.fade {
 82,Stuart,Harrison,TRUE,male,Stuart Harrison,Developer,Permanent,0,42,Jeni Tennison,X,,,,,X,,,X,33%,,,,,,,,,,,,X,,,,,
 83,Sumika,Sakanishi,TRUE,female,Sumika Sakanishi,Product Manager,Permanent,1,42,Jeni Tennison,,,,,,X,,,,100%,,,,,,,,,,,X,,,,,,
 84,NK,NK,FALSE,NK,Technical Consultant,Technical Consultant,Permanent,0,42,Jeni Tennison,,,,X,,,,,,100%,,,,,,,,X,,,,,,,,,
-85,Tom,Health,TRUE,male,Tom Health,Head of Research,Permanent,9,42,Jeni Tennison,,,,,X,X,,,,50%,X,,,,,,,,X,,,,,,,,
+85,Tom,Heath,TRUE,male,Tom Heath,Head of Research,Permanent,9,42,Jeni Tennison,,,,,X,X,,,,50%,X,,,,,,,,X,,,,,,,,
 86,Tom,Tharakan,TRUE,male,Tom Tharakan,Bid Manager,Permanent,0,71,Richard Stirling,,X,,X,X,X,,,,25%,,,X,,,,,,,,,,,,,,
 87,NK,NK,FALSE,NK,Trainer,Trainer,Associate,0,76,Simon Bullmore,,X,,,,,,,,100%,,,,,,,,,,X,,,,,,,
 88,Ulrich,Atz,TRUE,male,Ulrich Atz,Startup Programme Manager,Permanent,3,71,Richard Stirling,,,,X,,,,,,100%,,,,,X,,,,,,X,,,,,,
 89,William,Gerry,TRUE,male,William Gerry,Junior Consultant,Permanent,0,29,Emma Truswell,,,,X,,,,,,100%,,,,,,,X,X,,,,,,,,,</script>
 <script>
 
-var programmes = ["Membership", "Learning", "Franchise", "Services", "Evidence", "R&D", "Strategy", "Environment", "Culture"];
+var programmes = ["Membership", "Learning", "Franchise", "Services", "Evidence", "Labs", "Strategy", "Environment", "Culture"];
 var functions = ["leadership", "finance", "sales", "marketing", "engagement", "account mgmt", "project mgmt", "consultancy", "research", "training", "product mgmt", "software", "communications", "production", "events", "team support", "people dev"];
 
 var diameter = 960,
@@ -302,7 +302,7 @@ d3.csv.parse(document.getElementById('people').firstChild.nodeValue, function (d
         functionLookup[m[0]].push(person.id);
       }
       if (m) {
-        matrix[indexByName.get(m[0])][indexByName.get(person.name)] = 10;
+        matrix[indexByName.get(m[0])][indexByName.get(person.name)] = 5;
         matrix[indexByName.get(person.name)][indexByName.get(m[0])] = 1;
       }
     }
