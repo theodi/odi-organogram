@@ -81,81 +81,79 @@ path.fade {
   </div>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
-<script type="text/csv" id="people">Member Id,First Name,Last Name,In Post,Gender,Reference Name,Role Title,Role Type,# Reports,Reports To ID,Reports To,Membership (10),Learning (12),Franchise (5),Services (19),Evidence (18),Labs (20),Strategy (7),Environment (12),Culture (17),per programme,leadership (11),finance (4),sales (8),marketing (2),engagement (5),account mgmt (5),project mgmt (10),consultancy (8),policy (3),research (9),training (4),product mgmt (7),software (8),communications (2),production (5),events (3),team support (13),people dev (2)
-1,Adam,Hinchliff,TRUE,male,Adam Hinchliff,Research Project Manager,Fixed-term,0,67,Tom Heath,,,,,X,X,,,,50%,,,,,,,X,,,,,,,,,,,
-2,Adam,Sven Johnson,TRUE,male,Adam Sven Johnson,Developer,Permanent,0,32,James Smith,,,,,,X,,,,100%,,,,,,,,,,,,,X,,,,,
-3,Adrian,Philpott,TRUE,male,Adrian Philpott,Brand Design,Associate,0,40,Laura Davis,,,,,,X,,,X,50%,,,,,,,,,,,,,,,X,,,
-4,Alexander ,Leon,TRUE,male,Alexander  Leon,Business Support Administrator,Fixed-term,0,38,Kateryna Onyiliogwu,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X,
-5,Alison,Walters,TRUE,female,Alison Walters,Finance,Associate,1,45,Louise Burke,,,,X,X,X,,X,,25%,,X,,,,,,,,,,,,,,,,
-6,Amanda,Smith,TRUE,female,Amanda Smith,Account Manager,Permanent,0,56,Richard Stirling,,,,,X,X,,,,50%,,,,,X,,,,,,,,,,,,,
-7,Andrea,Cox,TRUE,female,Andrea Cox,Membership Manager,Permanent,0,53,Rachel Leech,X,,,,,,,,,100%,,,,,X,X,,,,,,,,,,,,
-8,Anna,Scott,TRUE,female,Anna Scott,Writer / Editor,Permanent,0,40,Laura Davis,,,,X,X,,,,X,33%,,,,,,,,,,,,,,,X,,,
-9,Anneza,Pitsialis,TRUE,female,Anneza Pitsialis,Franchise Network Coordinator,Permanent,0,23,Emma Truswell,,,X,,,,,,,100%,,,,,,X,,,,,,,,,,,,
-10,Benjamin,Cave,TRUE,male,Benjamin Cave,Trainer,Permanent,0,60,Simon Bullmore,,X,,,,,,,,100%,,,,,,,,,,,X,,,,,,,
-11,Beth,Cooper,TRUE,female,Beth Cooper,Business Support Administrator,Fixed-term,0,38,Kateryna Onyiliogwu,,,,,,X,,X,,50%,,,,,,,,,,,,,,,,,X,
-12,Briony,Phillips,TRUE,female,Briony Phillips,ODCS Programme Lead,Fixed-term,0,34,Jeni Tennison,,,,X,,,,,,100%,,,,,X,,,,,,,X,,,,,,
-13,Carl,Rodrigues,TRUE,male,Carl Rodrigues,Commercial Sales,Associate,0,25,Gavin Starks,X,,,,,,,,,100%,,,X,,,,,,,,,,,,,,,
-14,Carlina,George,TRUE,female,Carlina George,People,Permanent,0,61,Simone Giles,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,,X
-15,Dave,Tarrant,TRUE,male,Dave Tarrant,Senior Trainer,Permanent,0,60,Simon Bullmore,,X,,,,,,,,100%,,,,,,,,,,,X,,,,,,,
-16,Dawn,Duhaney,TRUE,female,Dawn Duhaney,Junior Analyst,Permanent,0,23,Emma Truswell,,,,X,,,,,,100%,,,,,,,,,,X,,,,,,,,
-17,Ellen,Broad,TRUE,female,Ellen Broad,Policy Advisor,Permanent,1,34,Jeni Tennison,,,,X,X,,X,,,33%,,,,,,,,X,X,,X,,,,,,,
-18,Emeafa,Doe,TRUE,female,Emeafa Doe,Programme Support,Permanent,0,31,Jade Croucher,,,X,,X,,,,,50%,,,,,,,,,,,,,,,,,X,
-19,Emilia,Kacprzak,FALSE,female,Emilia Kacprzak,PhD Student,Fixed-term,0,67,Tom Heath,,,,,,X,,,,100%,,,,,,,,,,X,,,,,,,,
-20,Emily,Vacher,TRUE,female,Emily Vacher,Training Administrator,Fixed-term,0,60,Simon Bullmore,,X,,,,,,,,100%,,,,,,,,,,,,,,,,,X,
-21,Emma,Galal,TRUE,female,Emma Galal,Executive Support,Permanent,0,31,Jade Croucher,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X,
-22,Emma,Thwaites,TRUE,female,Emma Thwaites,Communications,Associate,1,25,Gavin Starks,,,,,X,,X,,X,33%,X,,,,,,,,,,,,,X,,,,
-23,Emma,Truswell,TRUE,female,Emma Truswell,Deputy Head of Services,Permanent,3,56,Richard Stirling,,,,X,,,,,,100%,,,,,,X,X,X,,,,,,,,,,
-24,Fiona,Smith,TRUE,female,Fiona Smith,Researcher (OD4D),Fixed-term,0,44,Liz Carolan,,,,X,,,,,,100%,,,,,,,,,,X,,,,,,,,
-25,Gavin,Starks,TRUE,male,Gavin Starks,CEO,Permanent,9,,,X,X,X,,,,X,,X,20%,X,,X,,,,,,,,,X,,,,,,
-26,Hannah,Attwood-Foulds,TRUE,female,Hannah Attwood-Foulds,Digital Marketing Manager,Permanent,0,53,Rachel Leech,X,X,,X,X,X,,,X,17%,,,,X,,,,,,,,,,,,,,
-27,Hannah,Redler,TRUE,female,Hannah Redler,Art Programme,Associate,0,40,Laura Davis,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,,
-28,Iraia,Monteagudo,TRUE,female,Iraia Monteagudo,Startup Programme Assistant,Fixed-term,0,70,Ulrich Atz,,,,X,,,,,,100%,,,,,,X,,,,,,,,,,,X,
-29,Irina,Bolychevsky,TRUE,female,Irina Bolychevsky,Open Data Certificate Community Builder,Associate,0,66,Sumika Sakanishi,,,,,,X,,,,100%,,,,,X,,,,,,,X,,,,,,
-30,Jack,Hardinges,TRUE,male,Jack Hardinges,Research Assistant,Fixed-term,0,67,Tom Heath,,,,,X,,,,,100%,,,,,,,,,,X,,,,,,,,
-31,Jade,Croucher,TRUE,female,Jade Croucher,Operations Manager,Permanent,3,25,Gavin Starks,,,,,,,,X,,100%,X,,,,,,,,,,,,,,,,X,
-32,James,Smith,TRUE,male,James Smith,Head of Labs,Permanent,3,34,Jeni Tennison,X,,,,,X,,,X,33%,X,,,,,,,,,,,,X,,,,,
-33,Jamie,Fawcett,TRUE,male,Jamie Fawcett,Research Assistant,Fixed-term,0,67,Tom Heath,,,,,X,,,,,100%,,,,,,,,,,X,,,,,,,,
-34,Jeni,Tennison,TRUE,female,Jeni Tennison,Deputy CEO & Technical Director,Permanent,8,25,Gavin Starks,,,,X,X,X,X,,,25%,X,,,,,,,X,X,,,,X,,,,,
-35,Joe,Packman,TRUE,male,Joe Packman,Digital Producer,Permanent,0,40,Laura Davis,,,,,,,,,X,100%,,,,,,,,,,,,,,,X,,,
-36,Jordan,Elver,TRUE,male,Jordan Elver,Developer for Membership,Associate,0,32,James Smith,X,,,,,,,,,100%,,,,,,,,,,,,,X,,,,,
-37,Julie,Freeman,TRUE,female,Julie Freeman,Art Programme,Associate,0,40,Laura Davis,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,,
-38,Kateryna,Onyiliogwu,TRUE,female,Kateryna Onyiliogwu,Operations Team Leader,Permanent,3,31,Jade Croucher,,,,,X,,,X,,50%,,,,,,,,,,,,,,,,,X,
-39,Keren,Bowman,TRUE,female,Keren Bowman,Events Manager,Permanent,2,40,Laura Davis,,,,,,,,,X,100%,,,,,,,,,,,,,,,,X,,
-40,Laura,Davis,TRUE,female,Laura Davis,Head of Content and Production,Permanent,7,25,Gavin Starks,,,,,,,,,X,100%,X,,,X,,,,,,,,,,,X,X,,
-41,Laura,Koesten,TRUE,female,Laura Koesten,PhD Student,Fixed-term,0,67,Tom Heath,,,,,,X,,,,100%,,,,,,,,,,X,,,,,,,,
-42,Leigh,Dodds,TRUE,male,Leigh Dodds,Senior Technical Consultant,Permanent,1,56,Richard Stirling,,X,,X,,X,,,,33%,,,,,,,,X,,X,X,X,X,,,,,
-43,Lewis,Kille,TRUE,male,Lewis Kille,Business Support Administrator,Fixed-term,0,38,Kateryna Onyiliogwu,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,X,
-44,Liz,Carolan,TRUE,female,Liz Carolan,International Development Manager,Fixed-term,1,42,Leigh Dodds,,,,X,,,,,,100%,,,X,,,,,X,,,,,,,,,,
-45,Louise,Burke,TRUE,female,Louise Burke,Finance & Compliance Director,Permanent,3,25,Gavin Starks,,,,,,,X,X,X,33%,X,X,,,,,,,,,,,,,,,,
-46,Mandy,Costello,TRUE,female,Mandy Costello,Training Projects and Delivery Manager,Permanent,1,60,Simon Bullmore,,X,,,,,,,,100%,,,,,,,X,,,,,,,,,,,
-47,Maria,Demetriou,TRUE,female,Maria Demetriou,Finance Support,Permanent,0,5,Alison Walters,,,,,,,,X,,100%,,X,,,,,,,,,,,,,,,X,
-48,Orsola,DeMarco,TRUE,female,Orsola DeMarco,Startup Programme Assistant,Permanent,0,70,Ulrich Atz,,,,X,,,,,,100%,,,,,,X,,,,,,,,,,,X,
-49,Patrice,John-Baptiste,TRUE,female,Patrice John-Baptiste,Communications,Fixed-term,0,22,Emma Thwaites,,,,,X,,,,X,50%,,,,,,,,,,,,,,X,,,,
-50,Patrik,Wagner,TRUE,male,Patrik Wagner,Commercial Sales,Associate,0,53,Rachel Leech,X,,,,,,,,,100%,,,X,,,,,,,,,,,,,,,
-51,Peter,Wells,TRUE,male,Peter Wells,Policy Advisor,Associate,0,17,Ellen Broad,,,,,,,X,,,100%,,,,,,,,,X,,,,,,,,,
-52,Phil,Lang,TRUE,male,Phil Lang,Digital Production Editor,Permanent,0,40,Laura Davis,,,,X,X,,,,X,33%,,,,,,,,,,,,,,,X,,,
-53,Rachel,Leech,TRUE,female,Rachel Leech,Membership Business Manager,Permanent,3,25,Gavin Starks,X,,,,,,,,,100%,X,,X,,,,,,,,,X,,,,,,
-54,Remi,Van,TRUE,female,Remi Van,Events Support,Fixed-term,0,39,Keren Bowman,,,,,,,,,X,100%,,,,,,,,,,,,,,,,X,X,
-55,Richard,Norris,TRUE,male,Richard Norris,Innovation Unit Project Manager,Permanent,0,34,Jeni Tennison,,,,X,X,X,,,,33%,,,,,,,X,X,,,,,,,,,,
-56,Richard,Stirling,TRUE,male,Richard Stirling,International Director,Permanent,5,25,Gavin Starks,,,X,X,,,X,,,33%,X,,X,,,,,X,,,,,,,,,,
-57,Sam,Haines,TRUE,female,Sam Haines,Training Projects and Delivery Manager,Permanent,0,60,Simon Bullmore,,X,,,,,,,,100%,,,,,,,X,,,,,,,,,,,
-58,Sam,Michel,TRUE,male,Sam Michel,Summit Programme Delivery,Associate,0,39,Keren Bowman,,,,,,,,,X,100%,,,,,,,X,,,,,,,,,,,
-59,Sam,Pikesley,TRUE,male,Sam Pikesley,Head of Robots,Permanent,0,34,Jeni Tennison,,,,,,X,,,,100%,,,,,,,,,,,,,X,,,,,
-60,Simon,Bullmore,TRUE,male,Simon Bullmore,Business Manager (Training),Permanent,5,25,Gavin Starks,,X,,,,,,,,100%,X,,X,,,,,,,,,,,,,,,
-61,Simone,Giles,TRUE,female,Simone Giles,PeopleDev,Permanent,1,45,Louise Burke,,,,,,,,X,,100%,,,,,,,,,,,,,,,,,,X
-62,Stefan,Janusz,TRUE,male,Stefan Janusz,Open Data Story Producer,Fixed-term,0,67,Tom Heath,,,,,X,,,,,100%,,,,,,,X,,,X,,,,,,,,
-63,Steffica,Warwick,TRUE,female,Steffica Warwick,Training Coordinator,Permanent,0,46,Mandy Costello,,X,,,,,,,,100%,,,,,,,,,,,,,,,,,X,
-64,Stephanie,Dunstan,TRUE,female,Stephanie Dunstan,Accounts Assistant,Permanent,0,45,Louise Burke,X,X,X,,,,,X,,25%,,X,,,,,,,,,,,,,,,,
-65,Stuart,Harrison,TRUE,male,Stuart Harrison,Developer,Permanent,0,34,Jeni Tennison,X,,,,,X,,,X,33%,,,,,,,,,,,,,X,,,,,
-66,Sumika,Sakanishi,TRUE,female,Sumika Sakanishi,Product Manager,Permanent,1,34,Jeni Tennison,,,,,,X,,,,100%,,,,,,,,,,,,X,,,,,,
-67,Tom,Heath,TRUE,male,Tom Heath,Head of Research,Permanent,6,34,Jeni Tennison,,,,,X,X,,,,50%,X,,,,,,,,,X,,,,,,,,
-68,Tom,Tharakan,TRUE,male,Tom Tharakan,Bid Manager,Permanent,0,56,Richard Stirling,,X,,X,X,X,,,,25%,,,X,,,,,,,,,,,,,,,
-69,Tony,Marklove,TRUE,male,Tony Marklove,Developer for ODCs,Associate,0,32,James Smith,,,,,,X,,,,100%,,,,,,,,,,,,,X,,,,,
-70,Ulrich,Atz,TRUE,male,Ulrich Atz,Startup Programme Manager,Permanent,2,56,Richard Stirling,,,,X,,,,,,100%,,,,,X,,,,,,,X,,,,,,
-71,William,Gerry,TRUE,male,William Gerry,Junior Consultant,Fixed-term,0,23,Emma Truswell,,,,X,,,,,,100%,,,,,,,X,X,,,,,,,,,,</script>
+<script type="text/csv" id="people">Member Id,First Name,Last Name,In Post,Gender,Name,Role Title,Timesheet Key,Timesheet,Role Type,# Reports,Reports To ID,Reports To,FTE,Main Programme,Membership,Learning,Startups,Services,Evidence,Labs,Strategy,Environment,Culture,Board,Total (%),leadership (21),finance (4),sales (11),marketing (1),engagement (8),account mgmt (3),project mgmt (11),consultancy (4),policy (4),research (5),training (2),product mgmt (2),software (8),communications (2),production (5),events (0),team support (12),people dev (3)
+1,Adam,Hinchliff,TRUE,male,Adam Hinchliff,Research Project Manager,1y_0Z_ODH2Xn8DPhJINwAg2LkpbTWPvXs7uY5bov0fRA,https://docs.google.com/spreadsheets/d/1y_0Z_ODH2Xn8DPhJINwAg2LkpbTWPvXs7uY5bov0fRA/edit,Fixed-term,0,42,Louise Burke,1.0,Environment,0%,20%,20%,30%,0%,30%,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,,
+2,Adam,Sven Johnson,TRUE,male,Adam Sven Johnson,Developer,,,Contract,0,30,James Smith,0.4,Labs,0%,0%,0%,0%,0%,100%,0%,0%,0%,,100%,,,,,,,,,,,,,X,,,,,
+3,Adrian,Philpott,TRUE,male,Adrian Philpott,Brand Design,,,Associate,0,37,Laura Davis,0.5,Culture,0%,0%,15%,0%,0%,10%,35%,0%,40%,,100%,,,,,,,,,,,,,,,X,,,
+4,Alison,Walters,TRUE,female,Alison Walters,Finance,,,Associate,0,42,Louise Burke,0.4,Environment,0%,20%,20%,30%,0%,30%,0%,0%,0%,,100%,,X,,,,,,,,,,,,,,,,
+5,Amanda,Smith,TRUE,female,Amanda Smith,Account Manager,,,Permanent,0,20,Emma Truswell,1.0,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,,,,,,X,X,,,,,,,,,,,
+6,Anna,Scott,TRUE,female,Anna Scott,Writer / Editor,,,Permanent,0,37,Laura Davis,1.0,Culture,10%,10%,5%,10%,15%,0%,10%,0%,40%,,100%,,,,,,,,,,,,,,,X,,,
+7,Anneza,Pitsialis,TRUE,female,Anneza Pitsialis,Franchise Network Coordinator,,,Permanent,0,52,Rachel Leech,1.0,Startups,0%,0%,100%,0%,0%,0%,0%,0%,0%,,100%,,,,,X,,,,,,,,,,,,,
+8,Benjamin,Cave,TRUE,male,Benjamin Cave,Trainer,,,Permanent,0,60,Simon Bullmore,1.0,Learning,0%,100%,0%,0%,0%,0%,0%,0%,0%,,100%,,,,,,,,,,,X,,,,,,,
+9,Beth,Cooper,TRUE,female,Beth Cooper,Business Support Administrator,,,Fixed-term,0,29,Jade Croucher,1.0,Environment,0%,0%,0%,0%,0%,0%,0%,100%,0%,,100%,,,,,,,,,,,,,,,,,X,
+10,Carl,Rodrigues,TRUE,male,Carl Rodrigues,Business Development,,,Associate,0,52,Rachel Leech,0.5,Membership,35%,20%,15%,0%,0%,20%,0%,0%,10%,,100%,,,X,,,,,,,,,,,,,,,
+11,NK,NK,FALSE,NK,Commercial Network Director,Commercial Network Director,,,Permanent,0,22,Gavin Starks,1.0,Strategy,5%,5%,25%,25%,0%,10%,20%,0%,10%,,100%,X,,X,,,,,,,,,,,,,,,
+12,NK,NK,FALSE,NK,Culture & Innovation Unit Programme Support,Culture & Innovation Unit Programme Support,,,Fixed-term,0,37,Laura Davis,1.0,Culture,0%,0%,0%,20%,10%,30%,0%,0%,40%,,100%,,,,,,,,,,,,,,,,,X,
+13,Dave,Tarrant,TRUE,male,Dave Tarrant,Senior Trainer,,,Permanent,0,60,Simon Bullmore,1.0,Learning,0%,100%,0%,0%,0%,0%,0%,0%,0%,,100%,,,,,,,,,,,X,,,,,,,
+14,Dawn,Duhaney,TRUE,female,Dawn Duhaney,Junior Project Manager,,,Permanent,0,21,Fiona Smith,1.0,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,,
+15,Ellen,Broad,TRUE,female,Ellen Broad,Policy Lead,,,Permanent,2,32,Jeni Tennison,1.0,Strategy,0%,0%,0%,0%,0%,0%,100%,0%,0%,,100%,,,,,,,,,X,,,,,,,,,
+16,Emilia,Kacprzak,TRUE,female,Emilia Kacprzak,PhD Student,,,Fixed-term,0,66,Tom Heath,1.0,Labs,0%,0%,0%,0%,0%,100%,0%,0%,0%,,100%,,,,,,,,,,X,,,X,,,,,
+17,Emily,Vacher,TRUE,female,Emily Vacher,Learning Support,,,Fixed-term,0,43,Mandy Costello,1.0,Learning,0%,100%,0%,0%,0%,0%,0%,0%,0%,,100%,,,,,,,,,,,,,,,,,X,
+18,Emma,Galal,TRUE,female,Emma Galal,Executive Support,,,Permanent,0,29,Jade Croucher,1.0,Strategy,0%,0%,0%,0%,0%,0%,100%,0%,0%,,100%,,,,,,,,,,,,,,,,,X,
+19,Emma,Thwaites,TRUE,female,Emma Thwaites,Communications,,,Associate,1,22,Gavin Starks,1.0,Strategy,10%,0%,0%,0%,20%,0%,50%,0%,20%,,100%,X,,,,,,,,,,,,,X,,,,
+20,Emma,Truswell,TRUE,female,Emma Truswell,Deputy Head of Services,,,Permanent,3,55,Richard Stirling,1.0,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,X,,,,,,X,,,,,,,,,,,
+21,Fiona,Smith,TRUE,female,Fiona Smith,International Development Manager,,,Fixed-term,3,55,Richard Stirling,1.0,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,,
+22,Gavin,Starks,TRUE,male,Gavin Starks,CEO,,,Permanent,9,47,Nigel Shadbolt,1.0,Strategy,0%,0%,15%,0%,0%,0%,85%,0%,0%,,100%,X,,X,,,,,,,,,,,,,,,
+23,Hannah,Attwood-Foulds,TRUE,female,Hannah Attwood-Foulds,Digital Marketing Manager,,,Permanent,0,37,Laura Davis,1.0,Membership,40%,20%,0%,0%,0%,5%,0%,0%,35%,,100%,,,,X,,,,,,,,,,,,,,
+24,Hannah,Redler,TRUE,female,Hannah Redler,Art Programme,,,Associate,0,37,Laura Davis,0.3,Culture,0%,0%,0%,0%,0%,0%,0%,0%,100%,,100%,,,,,,,,,,,,X,,,,,,
+25,NK,NK,FALSE,NK,HR & Finance Assistant,HR & Finance Assistant,,,Permanent,0,63,Stephanie Dunstan,1.0,Environment,0%,0%,0%,0%,0%,0%,0%,100%,0%,,100%,,X,,,,,,,,,,,,,,,X,X
+26,Iraia,Monteagudo,TRUE,female,Iraia Monteagudo,Startup Programme Assistant,,,Fixed-term,0,68,Ulrich Atz,1.0,Startups,0%,0%,100%,0%,0%,0%,0%,0%,0%,,100%,,,,,X,,,,,,,,,,,,X,
+27,Irina,Bolychevsky,TRUE,female,Irina Bolychevsky,Open Data Certificate Community Builder,,,Contract,0,30,James Smith,0.4,Labs,0%,0%,0%,0%,0%,100%,0%,0%,0%,,100%,,,,,,,,,,,,X,,,,,,
+28,Jack,Hardinges,TRUE,male,Jack Hardinges,Commercial Writer,,,Associate,0,67,Tom Tharakan,1.0,Services,0%,0%,0%,40%,10%,35%,15%,0%,0%,,100%,,,X,,,,,X,,,,,,,,,,
+29,Jade,Croucher,TRUE,female,Jade Croucher,Operations Manager,,,Permanent,3,22,Gavin Starks,1.0,Environment,0%,0%,0%,0%,0%,0%,0%,100%,0%,,100%,X,,,,,,,,,,,,,,,,X,X
+30,James,Smith,TRUE,male,James Smith,Head of Labs,,,Permanent,2,32,Jeni Tennison,1.0,Labs,0%,0%,0%,0%,0%,95%,0%,0%,5%,,100%,X,,,,X,,,,,,,,X,,,,,
+31,Jamie,Fawcett,TRUE,male,Jamie Fawcett,Research Assistant,,,Permanent,0,15,Ellen Broad,1.0,Evidence,0%,10%,0%,0%,80%,10%,0%,0%,0%,,100%,,,,,,,,,,X,,,,,,,,
+32,Jeni,Tennison,TRUE,female,Jeni Tennison,Deputy CEO & Technical Director,,,Permanent,6,22,Gavin Starks,1.0,Strategy,0%,0%,0%,15%,30%,10%,45%,0%,0%,,100%,X,,,,,,,,X,X,,,X,,,,,
+33,Julie,Freeman,TRUE,female,Julie Freeman,Art Programme,,,Associate,0,37,Laura Davis,0.1,Culture,0%,0%,0%,0%,0%,0%,0%,0%,100%,,100%,,,,,,,X,,,,,,,,,,,
+34,Julie,McMahon,TRUE,female,Julie McMahon,Global Network Programme Support,,,Permanent,0,52,Rachel Leech,1.0,Membership,40%,30%,30%,,0%,0%,0%,0%,0%,,100%,,,,,,,,,,,,,,,,,X,
+35,NK,NK,FALSE,NK,Junior Designer,Junior Designer,,,Fixed-term,0,37,Laura Davis,1.0,Culture,0%,0%,0%,,0%,0%,0%,0%,100%,,100%,,,,,,,,,,,,,,,X,,,
+36,Kateryna,Onyiliogwu,TRUE,female,Kateryna Onyiliogwu,Internation Development Network Lead,,,Fixed-term,0,21,Fiona Smith,1.0,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,,,,,X,X,,,,,,,,,,,,
+37,Laura,Davis,TRUE,female,Laura Davis,Head of Content,,,Permanent,8,22,Gavin Starks,1.0,Culture,0%,0%,0%,0%,0%,0%,0%,0%,100%,,100%,X,,,,,,,,,,,,,,X,,,
+38,Laura,Koesten,TRUE,female,Laura Koesten,PhD Student,,,Fixed-term,0,66,Tom Heath,1.0,Labs,0%,0%,0%,0%,0%,100%,0%,0%,0%,,100%,,,,,,,,,,X,,,X,,,,,
+39,Leigh,Dodds,TRUE,male,Leigh Dodds,Senior Technical Consultant,,,Permanent,0,55,Richard Stirling,1.0,Services,0%,0%,0%,90%,0%,10%,0%,0%,0%,,100%,,,,,,,,X,,,,,,,,,,
+40,Lewis,Kille,TRUE,male,Lewis Kille,Business Support Administrator,,,Fixed-term,0,29,Jade Croucher,1.0,Environment,0%,0%,0%,0%,0%,0%,0%,100%,0%,,100%,,,,,,,,,,,,,,,,,X,
+41,Liz,Carolan,TRUE,female,Liz Carolan,International Development Associate,,,Associate,0,21,Fiona Smith,0.3,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,,,X,,,,,X,,,,,,,,,,
+42,Louise,Burke,TRUE,female,Louise Burke,Finance & Compliance Director,,,Permanent,4,22,Gavin Starks,1.0,Strategy,5%,5%,5%,5%,5%,5%,60%,5%,5%,,100%,X,X,,,,,,,,,,,,,,,,
+43,Mandy,Costello,TRUE,female,Mandy Costello,Training Projects and Delivery Manager,,,Fixed-term,2,60,Simon Bullmore,1.0,Learning,0%,100%,0%,0%,0%,0%,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,,
+44,Martha,Lane-Fox,TRUE,female,Martha Lane-Fox,Non-Executive Director,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+45,Martin,Tisne,TRUE,male,Martin Tisne,Non-Executive Director,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+46,Neelie,Kroes,TRUE,female,Neelie Kroes,Non-Executive Director,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+47,Nigel,Shadbolt,TRUE,male,Nigel Shadbolt,Chairman,,,Permanent,8,,,0.4,Board,0%,0%,0%,0%,0%,0%,50%,0%,0%,50%,100%,X,,X,,,,,,,,,,,,,,,
+48,Orsola,DeMarco,TRUE,female,Orsola DeMarco,Startup Programme Assistant,,,Permanent,0,68,Ulrich Atz,1.0,Startups,0%,0%,100%,0%,0%,0%,0%,0%,0%,,100%,,,,,X,,,,,,,,,,,,X,
+49,Patrice,John-Baptiste,TRUE,female,Patrice John-Baptiste,Communications,,,Fixed-term,0,19,Emma Thwaites,1.0,Evidence,5%,5%,10%,10%,30%,10%,10%,0%,20%,,100%,,,,,,,,,,,,,,X,,,,
+50,Peter,Wells,TRUE,male,Peter Wells,Policy Advisor,,,Fixed-term,0,15,Ellen Broad,0.6,Strategy,0%,0%,0%,0%,0%,0%,100%,0%,0%,,100%,,,,,,,,,X,,,,,,,,,
+51,Phil,Lang,TRUE,male,Phil Lang,Digital Production Editor,,,Permanent,0,37,Laura Davis,1.0,Culture,0%,5%,0%,5%,15%,5%,5%,0%,65%,,100%,,,,,,,,,,,,,,,X,,,
+52,Rachel,Leech,TRUE,female,Rachel Leech,Membership Business Manager,,,Permanent,2,22,Gavin Starks,1.0,Membership,100%,0%,0%,0%,0%,0%,0%,0%,0%,,100%,X,,X,,X,,,,,,,,,,,,,
+53,Richard,Marsh,TRUE,male,Richard Marsh,Non-Executive Director,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+54,Richard,Norris,TRUE,male,Richard Norris,Innovation Unit Project Manager,,,Permanent,0,32,Jeni Tennison,1.0,Labs,0%,0%,0%,0%,30%,70%,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,,
+55,Richard,Stirling,TRUE,male,Richard Stirling,International Director,,,Permanent,5,22,Gavin Starks,1.0,Strategy,0%,0%,0%,50%,0%,0%,50%,0%,0%,,100%,X,,X,,,,,,X,,,,,,,,,
+56,Rob,Bryan,TRUE,male,Rob Bryan,Secretary,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+57,Roger,Hampson,TRUE,male,Roger Hampson,Non-Executive Director,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+58,Sam,Haines,TRUE,female,Sam Haines,Training Projects and Delivery Manager,,,Permanent,0,60,Simon Bullmore,1.0,Learning,0%,100%,0%,0%,0%,,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,,
+59,Sam,Pikesley,TRUE,male,Sam Pikesley,Head of Robots,,,Permanent,0,32,Jeni Tennison,1.0,Labs,0%,0%,0%,0%,0%,100%,0%,0%,0%,,100%,,,,,,,,,,,,,X,,,,,
+60,Simon,Bullmore,TRUE,male,Simon Bullmore,Head of Learning,,,Permanent,4,22,Gavin Starks,1.0,Learning,0%,100%,0%,0%,0%,0%,0%,0%,0%,,100%,X,,X,,,,,,,,,,,,,,,
+61,Simone,Giles,TRUE,female,Simone Giles,PeopleDev,,,Permanent,0,42,Louise Burke,1.0,Environment,0%,0%,0%,0%,0%,0%,0%,100%,0%,,100%,X,,,,,,,,,,,,,,,,,X
+62,Steff,Warwick,TRUE,female,Steff Warwick,Training Coordinator,,,Permanent,0,43,Mandy Costello,1.0,Learning,0%,100%,0%,0%,0%,0%,0%,0%,0%,,100%,,,,,,,X,,,,,,,,,,X,
+63,Stephanie,Dunstan,TRUE,female,Stephanie Dunstan,Accounts Assistant,,,Permanent,1,42,Louise Burke,1.0,Environment,20%,5%,5%,5%,0%,5%,0%,50%,10%,,100%,,X,,,,,,,,,,,,,,,,
+64,Stuart,Harrison,TRUE,male,Stuart Harrison,Developer,,,Permanent,0,32,Jeni Tennison,1.0,Labs,10%,10%,0%,0%,0%,65%,5%,0%,10%,,100%,,,,,,,,,,,,,X,,,,,
+65,Tim,Berners-Lee,TRUE,male,Tim Berners-Lee,President,,,Permanent,0,47,Nigel Shadbolt,0.0,Board,0%,0%,0%,0%,0%,0%,0%,0%,0%,100%,100%,X,,,,,,,,,,,,,,,,,
+66,Tom,Heath,TRUE,male,Tom Heath,Head of Research,,,Permanent,2,32,Jeni Tennison,0.8,Labs,0%,0%,0%,0%,10%,90%,0%,0%,0%,,100%,,,X,,X,,,,,X,,,X,,,,,
+67,Tom,Tharakan,TRUE,male,Tom Tharakan,Bid Manager,,,Permanent,1,55,Richard Stirling,1.0,Services,5%,10%,5%,30%,10%,25%,15%,0%,0%,,100%,,,X,,,,,,,,,,,,,,,
+68,Ulrich,Atz,TRUE,male,Ulrich Atz,Startup Programme Manager,17Dnf1RDEon_iqpC4qW8jgn77cw1fJLqAdeLNTZpp8Ko,https://docs.google.com/spreadsheets/d/17Dnf1RDEon_iqpC4qW8jgn77cw1fJLqAdeLNTZpp8Ko/edit,Permanent,2,55,Richard Stirling,1.0,Startups,0%,0%,100%,0%,0%,0%,0%,0%,0%,,100%,,,,,X,X,X,,,,,,,,,,,
+69,William,Gerry,TRUE,male,William Gerry,Junior Consultant,,,Fixed-term,0,20,Emma Truswell,1.0,Services,0%,0%,0%,100%,0%,0%,0%,0%,0%,,100%,,,,,,,,X,,,,,,,,,X,</script>
 <script>
 
-var programmes = ["Membership", "Learning", "Franchise", "Services", "Evidence", "Labs", "Strategy", "Environment", "Culture"];
+var programmes = ["Membership", "Learning", "Startups", "Services", "Evidence", "Labs", "Strategy", "Environment", "Culture", "Board"];
 var functions = ["leadership", "finance", "sales", "marketing", "engagement", "account mgmt", "project mgmt", "consultancy", "policy", "research", "training", "product mgmt", "software", "communications", "production", "events", "team support", "people dev"];
 
 var diameter = 960,
@@ -179,7 +177,7 @@ var diagonal = d3.svg.diagonal.radial()
 
 var color = d3.scale.ordinal()
     .domain(programmes)
-    .range(["#0DBC37", "#1DD3A7", "#08DEF9", "#722EA5", "#B13198", "#EF3AAB", "#D60303", "#FF6700", "#F9BC26"]);
+    .range(["#0DBC37", "#1DD3A7", "#08DEF9", "#722EA5", "#B13198", "#EF3AAB", "#D60303", "#FF6700", "#F9BC26", "#CCCCCC"]);
 
 var arc = d3.svg.arc()
     .outerRadius(nodeRadius)
@@ -261,7 +259,7 @@ d3.csv.parse(document.getElementById('people').firstChild.nodeValue, function (d
   var person = {
     type: "person",
     id: +d["Member Id"],
-    name: d["Reference Name"],
+    name: d["Name"],
     inPost: d["In Post"] == "TRUE",
     roleTitle: d["Role Title"],
     parent: +d["Reports To ID"],
@@ -275,7 +273,7 @@ d3.csv.parse(document.getElementById('people').firstChild.nodeValue, function (d
   matrix[n] = [];
   n++;
   for (var col in d) {
-    if (d[col] == "X") {
+    if (d[col] == "X" || (d[col] !== "" && d[col] !== "0%")) {
       if (m = col.match(programmeRegex)) {
         person.programmes.push(m[0]);
         programmeLookup[m[0]].push(person.id);
